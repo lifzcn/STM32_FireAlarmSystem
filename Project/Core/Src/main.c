@@ -144,8 +144,7 @@ int main(void)
     OLED_ShowChar(x + 16 * 4 + 8 * 3, y + 2 * 2, '.', 16);
     OLED_ShowChar(x + 16 * 4 + 8 * 5, y + 2 * 2, '%', 16);
 		
-		printf("T_%d.%1d\n", tempratureValueInteger, tempratureValueDecimal);
-		printf("H_%d.%1d\n", humidityValueInteger, humidityValueDecimal);
+		printf("%d.%1d,%d.%1d\n", tempratureValueInteger, tempratureValueDecimal, humidityValueInteger, humidityValueDecimal);
 
     HAL_Delay(1000);
     /* USER CODE END WHILE */
