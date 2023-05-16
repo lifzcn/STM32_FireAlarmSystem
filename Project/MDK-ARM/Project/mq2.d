@@ -1,4 +1,4 @@
-project/oled.o: ..\Core\Src\oled.c ..\Core\Inc\oled.h \
+project/mq2.o: ..\Core\Src\mq2.c ..\Core\Inc\mq2.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
@@ -31,4 +31,4 @@ project/oled.o: ..\Core\Src\oled.c ..\Core\Inc\oled.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Core\Inc\main.h ..\Core\Inc\i2c.h ..\Core\Inc\oledfont.h
+  ..\Core\Inc\main.h ..\Core\Inc\adc.h

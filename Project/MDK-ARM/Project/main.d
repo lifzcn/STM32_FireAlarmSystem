@@ -22,6 +22,8 @@ project/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_cortex.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h \
+  ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_i2c.h \
@@ -29,6 +31,8 @@ project/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Core\Inc\i2c.h ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
+  ..\Core\Inc\adc.h ..\Core\Inc\dma.h ..\Core\Inc\i2c.h \
+  ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
   D:\ProgramFiles\KeilMDK\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\Core\Inc\gpio.h ..\Core\Inc\oled.h ..\Core\Inc\dht11.h
+  ..\Core\Inc\gpio.h ..\Core\Inc\oled.h ..\Core\Inc\dht11.h \
+  ..\Core\Inc\mq2.h
