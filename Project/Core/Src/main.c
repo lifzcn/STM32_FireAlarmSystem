@@ -80,13 +80,13 @@ int main(void)
   uint8_t humidityValueInteger = 0;
   uint8_t humidityValueDecimal = 0;
   uint32_t adcValue = 0;
-  float smokeDensity = 0;
+  float smokeDensityValue = 0;
   uint8_t smokeDensityInteger = 0;
   uint8_t smokeDensityDecimal_OneUnit = 0;
   uint8_t smokeDensityDecimal_TenUnit = 0;
   uint8_t temperatureLimitValue = 30;
   uint8_t humidityLimitValue = 30;
-  uint8_t smokeLimitValue = 10;
+  uint8_t smokeLimitValue = 50;
   uint8_t rxBuffer[4] = {0};
   uint8_t tempTenUnit_T = 0;
   uint8_t tempOneUnit_T = 0;
@@ -154,11 +154,11 @@ int main(void)
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, 100);
     adcValue = HAL_ADC_GetValue(&hadc1);
-    smokeDensity = (float)adcValue / 4095 * 100;
+    smokeDensityValue = (float)adcValue / 4095 * 100;
 
-    smokeDensityInteger = (int)smokeDensity;
-    smokeDensityDecimal_OneUnit = (int)(smokeDensity - smokeDensityInteger) * 10;
-    smokeDensityDecimal_TenUnit = (int)((smokeDensity - smokeDensityInteger) * 10 - smokeDensityDecimal_OneUnit);
+    smokeDensityInteger = (int)smokeDensityValue;
+    smokeDensityDecimal_OneUnit = (int)(smokeDensityValue - smokeDensityInteger) * 10;
+    smokeDensityDecimal_TenUnit = (int)((smokeDensityValue - smokeDensityInteger) * 10 - smokeDensityDecimal_OneUnit);
 
     OLED_ShowNum(x + 16 * 4 + 8 * 1, y + 2 * 3, smokeDensityInteger, 3, 16);
 		OLED_ShowChar(x + 16 * 4 + 8 * 4, y + 2 * 3, '.', 16);
@@ -190,10 +190,10 @@ int main(void)
     {
       HAL_GPIO_WritePin(Buzzer_IO_GPIO_Port, Buzzer_IO_Pin, GPIO_PIN_SET);
     }
-    //	else if (smokeValue > smokeLimitValue)
-    //	{
-    //		HAL_GPIO_WritePin(Buzzer_IO_GPIO_Port, Buzzer_IO_Pin, GPIO_PIN_SET);
-    //	}
+    else if (smokeDensityValue > smokeLimitValue)
+    {
+			HAL_GPIO_WritePin(Buzzer_IO_GPIO_Port, Buzzer_IO_Pin, GPIO_PIN_SET);
+    }
     else
     {
       HAL_GPIO_WritePin(Buzzer_IO_GPIO_Port, Buzzer_IO_Pin, GPIO_PIN_RESET);
