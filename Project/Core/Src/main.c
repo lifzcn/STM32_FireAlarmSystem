@@ -84,7 +84,7 @@ int main(void)
   uint8_t smokeDensityInteger = 0;
   uint8_t smokeDensityDecimal_OneUnit = 0;
   uint8_t smokeDensityDecimal_TenUnit = 0;
-  uint8_t temperatureLimitValue = 30;
+  uint8_t temperatureLimitValue = 100;
   uint8_t humidityLimitValue = 30;
   uint8_t smokeLimitValue = 50;
   uint8_t rxBuffer[4] = {0};
@@ -180,7 +180,7 @@ int main(void)
     OLED_ShowChar(x + 16 * 4 + 8 * 3, y + 2 * 2, '.', 16);
     OLED_ShowChar(x + 16 * 4 + 8 * 5, y + 2 * 2, '%', 16);
 
-    printf("%d.%1d,%d.%1d\n", tempratureValueInteger, tempratureValueDecimal, humidityValueInteger, humidityValueDecimal);
+    printf("%d.%1d,%d.%1d,%.2f\n", tempratureValueInteger, tempratureValueDecimal, humidityValueInteger, humidityValueDecimal, smokeDensityValue);
 
     if (temperatureValue > temperatureLimitValue)
     {
